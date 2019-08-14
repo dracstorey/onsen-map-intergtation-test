@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loads a map on a page</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+          
+    <script>
+      const loadPage = (page) => {
+      document.querySelector('#navigator').bringPageTop(page, { animation: 'fade' })};;
+      </script>
+  </head>
+  <body>
+  <ons-navigator id="navigator">
+  <ons-page id="index">
+      <ons-toolbar>
+  <div class="left">
+    <ons-button onClick = "loadPage('map.html')">Click for Map
+  </ons-button>
+  </div>
+  <div class="right">
+    <ons-button onClick = "loadPage('map2.html')">Click for Map
+  </ons-button>
+  </div>
+</ons-toolbar>
+  </ons-page>
+  </ons-navigator>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+   <ons-page id="map2">
+       <script>
+    function initMap() 
+      {
+        alert("Map loaded, do some other stuff...");
+        var map;
+        map = new google.maps.Map(document.getElementById('map_space'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      };
+</script>
+ <ons-toolbar>
+  <div class="left">
+        <ons-back-button></ons-back-button>
+  </div>
+</ons-toolbar>
+     <div id="map_space" style="height:500px">Map should load here!</div>
+    
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-HwkM6q2uTCDGCky01IgKwzIMxwjfJ4&callback=initMap"
+ async defer></script>
+
+    </ons-page>

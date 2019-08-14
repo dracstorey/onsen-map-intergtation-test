@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Synchronous Loading</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+          
+    <script>
+      const loadPage = (page) => {
+      document.querySelector('#navigator').bringPageTop(page, { animation: 'fade' })};;
+      </script>
+  </head>
+  <body>
+  <ons-navigator id="navigator">
+  <ons-page id="index">
+    <br>
+    <ons-button modifier="large" onCLick="loadPage('map.html')">Click for Map Page - with button</ons-button>
+    <br>
+    <br>
+    <ons-button modifier="large" onCLick="loadPage('map2.html')">Click for Map Page - without button</ons-button>
+
+           <script>
+    function initMap() 
+      {
+        alert("Map loaded, do some other stuff...");
+        var map;
+        map = new google.maps.Map(document.getElementById('map_space'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      };
+</script>
+     <div id="map_space" style="height:500px"></div>
+    
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-HwkM6q2uTCDGCky01IgKwzIMxwjfJ4&callback=initMap"
+ async defer></script>
+     </ons-page>

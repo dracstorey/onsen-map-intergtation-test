@@ -1,0 +1,29 @@
+<ons-page id="map">
+  <ons-toolbar>
+  <div class="left">
+        <ons-back-button></ons-back-button>
+  </div>
+<div class="center">
+     <ons-toolbar-button
+      onCLick="loadScript(function() {setTimeout(function(){var map = new google.maps.Map(document.getElementById('map_space'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8}); }, 2000);})">
+        Click again to see the map
+        </ons-toolbar-button>
+</div>
+</ons-toolbar>
+
+<div id="map_space" style="height:500px"></div>
+<script>
+       // Load script function produces the google maps API and then the callbakc puts the map on the screen
+      function loadScript(callback) 
+      {
+        // Create a script
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-HwkM6q2uTCDGCky01IgKwzIMxwjfJ4';
+      document.getElementById("map").appendChild(script);
+      callback();
+      };
+  </script>
+    </ons-page>
